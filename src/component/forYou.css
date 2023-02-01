@@ -1,0 +1,40 @@
+.for-main {
+    text-align: center;
+}
+
+.for-nav {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 10px 0px;
+    background-color: white;
+}
+
+.for-nav div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.for-icon {
+    font-size: 30px;
+}
+
+
+.for-nav div h2 {
+    font-size: 20px;
+}
+
+.for-nav div img {
+    border-radius: 100px;
+    width: 50px;
+}
+
+@media only screen and (max-width: 650px) {
+    .for-nav {
+        display: flex;
+    }
+}

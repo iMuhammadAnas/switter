@@ -1,87 +1,53 @@
 import React from "react";
-// import { FaClipboard , FaUserAlt , FaFile , FaShoppingCart } from 'react-icons/fa'
-// import { MdMessage , MdAnalytics, MdFavorite, MdSettings } from 'react-icons/md'
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes, Link, NavLink } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { FaUserAlt, FaCog, FaHome, FaSignInAlt } from 'react-icons/fa'
+import { GiHummingbird } from 'react-icons/gi'
 import './main.css';
+import Foryou from "./Foryou";
+import About from './About';
+import Setting from './Setting';
+
+// import About from "./About";
+// import Setting from "./Setting";
 
 
 
-const Main = () => {
+class Main extends React.Component{
 
-    // const [isExpanded, setExpendState] = useState(false);
-	// const menuItems = [
-	// 	{
-	// 		text: "Dashboard",
-	// 		icon: <FaClipboard />,
-	// 	},
-	// 	{
-	// 		text: "Admin Profile",
-	// 		icon: <FaUserAlt />,
-	// 	},
-	// 	{
-	// 		text: "Messages",
-	// 		icon: <MdMessage />,
-	// 	},
-	// 	{
-	// 		text: "Analytics",
-	// 		icon: <MdAnalytics />,
-	// 	},
-	// 	{
-	// 		text: "File Manager",
-	// 		icon: <FaFile />,
-	// 	},
-	// 	{
-	// 		text: "Orders",
-	// 		icon: <FaShoppingCart />,
-	// 	},
-	// 	{
-	// 		text: "Saved Items",
-	// 		icon: <MdFavorite />,
-	// 	},
-	// 	{
-	// 		text: "Settings",
-	// 		icon: <MdSettings />,
-	// 	},
-	// ];
+    user = localStorage.getItem("userName")
+    userProfile = localStorage.getItem("userProfile")
 
-    return (
-        <div>Main Dashboard</div>
-        // <div className={ isExpanded ? "side-nav-container" : "side-nav-container side-nav-container-NX" } >
-        //     <div className="nav-upper">
-        //         <div className="nav-heading">
-        //             {isExpanded && (
-        //                 <div className="nav-brand">
-        //                     <img src="icons/Logo.svg" alt="" srcset="" />
-        //                     <h2>Showkart</h2>
-        //                 </div> )}
-        //             <button className={ isExpanded ? "hamburger hamburger-in" : "hamburger hamburger-out" } onClick={() => setExpendState(!isExpanded)} >
-        //                 <span></span>
-        //                 <span></span>
-        //                 <span></span>
-        //             </button>
-        //         </div>
-        //         <div className="nav-menu">
-        //             {menuItems.map(({ text, icon }) => (
-        //                 <a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="#" >
-        //                     <img className="menu-item-icon" src={icon} alt="" srcset="" />
-        //                     {isExpanded && <p>{text}</p>}
-        //                 </a>
-        //             ))}
-        //         </div>
-        //     </div>
-        //     <div className="nav-footer">
-        //         {isExpanded && (
-        //             <div className="nav-details">
-        //                 <img className="nav-footer-avatar" src="icons/admin-avatar.svg" alt="" srcset="" />
-        //                 <div className="nav-footer-info">
-        //                     <p className="nav-footer-user-name">M Showkat</p>
-        //                     <p className="nav-footer-user-position">store admin</p>
-        //                 </div>
-        //             </div>
-        //         )}
-        //         <img className="logout-icon" src="icons/logout.svg" alt="" srcset="" />
-        //     </div>
-        // </div>
-    )
+    state ={
+        container:'Home',
+    }
+    ChangePatch = (e)=>{
+        this.setState({container:e.target.innerText})
+    }
+    render(){
+        return(
+            <div className="main-dash">
+            <div className="side-nav">
+                <div className="profile-image">
+                    <img width='100px' height='100px' className="image" src={this.userProfile} />
+                </div>
+                <h2 className="user-name">{this.user}</h2>
+                <div className="nav-links">
+                    <Link className="link" to='/main' onClick={this.ChangePatch} ><FaHome className="nav-icon" />Home</Link>
+                    <Link className="link" to='/main' onClick={this.ChangePatch} ><FaUserAlt className="nav-icon" />About</Link>
+                    <Link className="link" to='/main'onClick={this.ChangePatch} ><FaCog className="nav-icon" />Setting</Link>
+                    <Link className="link" to='/login'  ><FaSignInAlt className="nav-icon" />Log Out</Link>
+                </div>
+            </div>
+            <div className="main-container">
+            {this.state.container === 'Home'? <Foryou/>: null}
+            {this.state.container === 'About'? <About/>: null}
+            {this.state.container === 'Setting'? <Setting/>: null}
+            </div>
+        </div>
+        )
+    }
 }
 
 export default Main

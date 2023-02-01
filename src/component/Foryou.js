@@ -10,9 +10,8 @@ const Foryou = () => {
   return (
     <div className='for-main'>
       <div className='for-nav'>
-        <div><GiHummingbird className='for-icon' /><h2>Switter</h2></div>
-        <div><h2>Hello {username}</h2></div>
-        <div><img src={userProfile} /></div>
+        <div className='for-logo'><GiHummingbird className='for-icon' /><h2>Switter</h2></div>
+        <div className='for-prof'><img src={userProfile} /><p>{username}</p></div>
       </div>
       <div className='content'>
         <h2>Home</h2>

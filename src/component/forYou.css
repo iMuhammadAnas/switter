@@ -4,19 +4,33 @@
 
 .for-nav {
     display: none;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: 70px;
     padding: 10px 0px;
     background-color: white;
 }
 
-.for-nav div {
+.for-logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
     /* border: 1px solid red; */
+}
+
+.for-prof {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.for-prof p {
+    margin-top: -8px;
+    font-weight: bold;
 }
 
 .for-icon {

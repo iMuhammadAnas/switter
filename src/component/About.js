@@ -13,7 +13,7 @@ const About = () => {
         <div className='for-logo'><GiHummingbird className='for-icon' /><h2>Switter</h2></div>
         <div className='for-prof'><img src={userProfile} /><p>{username}</p></div>
       </div>
-      <h2>About</h2>
+      <h2 className='heading'>About</h2>
     </div>
   )
 }

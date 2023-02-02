@@ -5,7 +5,7 @@ import './home.css'
 
 const Login = () => {
 
-    const image1 = 'https://i.timesnowhindi.com/stories/Gutka_Boy.jpg?tr=w-400,h-300,fo-auto';
+    const image1 = 'https://pbs.twimg.com/media/D_1hw7yXoAADgY-.jpg';
     const image2 = 'https://tellygupshup.com/wp-content/uploads/2021/01/kfer4e2u72v51.jpg';
     const image3 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7J_mYFtSrxBWWYktUacOA8GIuGtvpYI_Z6w&usqp=CAU';
     const defaultImage = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';

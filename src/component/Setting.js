@@ -11,9 +11,9 @@ const Setting = () => {
     <div className='for-main'>
       <div className='for-nav'>
         <div className='for-logo'><GiHummingbird className='for-icon' /><h2>Switter</h2></div>
-        <div className='for-prof'><img src={userProfile} /><p>{username}</p></div>
+        <div className='for-prof'><img src={userProfile} alt='profile image' /><p>{username}</p></div>
       </div>
-      <h2>Setting</h2>
+      <h2 className='heading'>Setting</h2>
     </div>
   )
 }
